@@ -1,9 +1,10 @@
 
 # 🔧 Revit CLI MSI Installer
 
-<div style="text-align: center;">
+<p align="center">
   <img src="./docs/3717068.png" alt="AddinMsiBuilder" style="max-height: 100px; width: auto;" />
-</div>
+</p>
+
 
 Revit CLI MSI Installer is a lightweight command-line tool that simplifies packaging Revit Add-ins into MSI installers. It helps Revit developers automate distribution across multiple Revit versions with consistent folder structures and deployment formats.
 
