@@ -53,7 +53,7 @@ D:\API\Test Revit CLI Msi\Installer\test\
 ```
 2. Run a Revit CLI MSI installer using the Revit CLI MSI Installer project.
 ```bash
-dotnet run -- --addin-path "D:\API\Test Revit CLI Msi\Installer\test\hello.addin" --assembly-dir "D:\API\Test Revit CLI Msi\Installer\test\contents" --revit-versions 2022 2023 --output-dir "output" --project-name "MyCoolAddin"
+dotnet run -- --addin-path "D:\API\Test Revit CLI Msi\Installer\test\hello.addin" --revit-versions 2022 2023 --output-dir "output" --project-name "MyCoolAddin"
 ```
 3. Verify Installation:
 
