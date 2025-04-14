@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RevitAddIns>
+  <AddIn Type="Application">
+    <Name>HelloAddin</Name>
+    <Assembly>contents\hello.dll</Assembly>
+    <AddInId>12345678-1234-1234-1234-1234567890AB</AddInId>
+    <FullClassName>HelloAddin.App</FullClassName>
+    <VendorId>ADSK</VendorId>
+  </AddIn>
+</RevitAddIns>

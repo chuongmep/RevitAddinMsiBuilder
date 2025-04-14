@@ -1,0 +1,34 @@
+name: Build and Pack RevitAddinMsiBuilder
+
+on:
+  push:
+    tags:
+      - 'v*'
+
+jobs:
+  build-and-pack:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v3
+
+    - name: Setup .NET
+      uses: actions/setup-dotnet@v3
+      with:
+        dotnet-version: '8.0.x'
+
+    - name: Build
+      run: dotnet build -c Release
+
+    - name: Pack
+      run: dotnet pack -c Release -o nupkgs
+
+    - name: Upload Package Artifact
+      uses: actions/upload-artifact@v3
+      with:
+        name: nuget-package
+        path: nupkgs/RevitAddinMsiBuilder.*.nupkg
+
+    - name: Push to NuGet (Optional)
+      run: dotnet nuget push nupkgs/RevitAddinMsiBuilder.*.nupkg --api-key ${{ secrets.NUGET_API_KEY }} --source https://api.nuget.org/v3/index.json
+      if: startsWith(github.ref, 'refs/tags/v')

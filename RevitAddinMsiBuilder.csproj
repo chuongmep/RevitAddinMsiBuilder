@@ -1,0 +1,45 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+    <PropertyGroup>
+        <OutputType>Exe</OutputType>
+        <LangVersion>latest</LangVersion>
+        <TargetFramework>net9.0-windows</TargetFramework>
+        <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
+        <PackageId>RevitAddinMsiBuilder</PackageId>
+        <Version>1.0.0.2</Version>
+        <Authors>chuongmep</Authors>
+        <Description>A lightweight CLI tool to package Revit Add-ins into MSI installers.</Description>
+        <PackageProjectUrl>https://github.com/chuongmep/RevitAddinMsiBuilder</PackageProjectUrl>
+        <RepositoryUrl>https://github.com/chuongmep/RevitAddinMsiBuilder.git</RepositoryUrl>
+        <PackageTags>revit;addin;msi;installer;cli</PackageTags>
+        <PackageLicenseExpression>MIT</PackageLicenseExpression>
+        <UseWpf>false</UseWpf>
+<!--        <PackAsTool>true</PackAsTool>-->
+        <UseWindowsForms>false</UseWindowsForms>
+        <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+        <ToolCommandName>revit-msi</ToolCommandName>
+    </PropertyGroup>
+
+    <PropertyGroup Condition="$(Configuration.Contains('Release'))">
+        <Optimize>true</Optimize>
+        <DebugType>none</DebugType>
+    </PropertyGroup>
+    <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+      <DebugType>full</DebugType>
+    </PropertyGroup>
+    <ItemGroup>
+        <PackageReference Include="System.CommandLine" Version="2.0.0-beta4.22272.1" />
+        <PackageReference Include="SharpZipLib" Version="1.4.2" />
+        <PackageReference Include="WixSharp.Core" Version="2.6.1" />
+    </ItemGroup>
+    <ItemGroup>
+      <None Update="Resources\Icons\BackgroundImage.png">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </None>
+      <None Update="Resources\Icons\BannerImage.png">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </None>
+      <None Update="Resources\Icons\ShellIcon.ico">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </None>
+    </ItemGroup>
+</Project>
