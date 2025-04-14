@@ -2,7 +2,7 @@
 # 🔧 Revit CLI MSI Installer
 
 <p align="center">
-  <img src="./docs/3717068.png" alt="AddinMsiBuilder" style="max-height: 100px; width: auto;" />
+  <img src="./docs/3717068.png" alt="AddinMsiBuilder" style="max-height: 50px; width: auto;" />
 </p>
 
 
